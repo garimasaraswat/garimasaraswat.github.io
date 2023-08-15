@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
- [$$\textcolor{red}{Instrumentation}$$](/instru.md)       [Modelling](model.md) [Superconductivity research](scresearch.md) [Life outside work](life.md)
+ [Instrumentation :wrench:](/instru.md)       [Modelling](model.md) [Superconductivity research](scresearch.md) [Life outside work](life.md)
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 <summary>Tips for collapsed sections</summary>
