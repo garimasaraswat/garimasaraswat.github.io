@@ -1,5 +1,5 @@
-| [Instrumentation](/instru.md)      | [Modelling](model.md) |<code>Highlighted text<code>
-| ---------------------------------- | --------------------- |
+| [Instrumentation](/instru.md)      | [Modelling](model.md) |[Superconductivity research](scresearch.md)| [Life outside work](life.md)
+
 
 With the above unnumbered (`{-}`) and empty section header,
 we can end the tabset and continue to write more paragraphs.**
@@ -28,18 +28,4 @@ This is a paragraph
 You can add text within a collapsed section. 
 
 You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
-ere is a simple flow chart:
-
-mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
 
