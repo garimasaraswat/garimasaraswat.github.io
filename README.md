@@ -1,16 +1,5 @@
-| [Instrumentation](/instru.md)      | [Modelling](model.md) |[Superconductivity research](scresearch.md)| [Life outside work](life.md)
+| [##Instrumentation](/instru.md)      | [##Modelling](model.md) |[Superconductivity research](scresearch.md)| [Life outside work](life.md)
 
-
-With the above unnumbered (`{-}`) and empty section header,
-we can end the tabset and continue to write more paragraphs.**
-# This is a heading
-
-## Here's a smaller heading
-
-This is a paragraph
-
-* Here's a bulleted list
-* Another item
 
 1. And an ordered list
 1. The numbers don't matter
