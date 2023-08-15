@@ -13,4 +13,4 @@ This is a paragraph
 > This is a qoute
 [About Us](/about.md)
 [This is a link to Google](https://google.com)
-![text](triangle.png){ width=60%,height:30px }
+![text](triangle.png)
