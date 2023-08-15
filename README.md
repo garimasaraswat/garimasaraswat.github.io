@@ -1,4 +1,4 @@
-**## Results {.tabset}
+## Results {.tabset}
 
 ### Tab One
 
