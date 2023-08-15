@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
- [Instrumentation :wrench:](/instru.md)       [Modelling](model.md) [Superconductivity research](scresearch.md) [Life outside work](life.md)
+ :nut_and_bolt:[Instrumentation :wrench:](/instru.md)       [:computer:Modelling:mag:](model.md) [:snowflake:Superconductivity research](scresearch.md) [:bike:Life outside work:gem:](life.md)
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 <summary>Tips for collapsed sections</summary>
