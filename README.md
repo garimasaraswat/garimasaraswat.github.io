@@ -1,4 +1,4 @@
-| [Instrumentation](/instru.md)      | [Modelling](model.md) | <button class="button-save large">Big Fat Button</button>
+| [Instrumentation](/instru.md)      | [Modelling](model.md) | <mark style="background-color: #FFFF00">Highlighted text</mark>  
 | ---------------------------------- | --------------------- |
 
 With the above unnumbered (`{-}`) and empty section header,
