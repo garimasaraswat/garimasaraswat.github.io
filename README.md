@@ -11,5 +11,5 @@ This is a paragraph
 1. The numbers don't matter
 
 > This is a qoute
-[About Us](/about)
+[About Us](/about.md)
 [This is a link to Google](https://google.com)
