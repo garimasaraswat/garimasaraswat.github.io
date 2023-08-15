@@ -1,4 +1,4 @@
-| [Instrumentation](/instru.md)      | [Modelling](model.md) | ==Highlighted text==
+| [Instrumentation](/instru.md)      | [Modelling](model.md) |<code>Highlighted text<code>
 | ---------------------------------- | --------------------- |
 
 With the above unnumbered (`{-}`) and empty section header,
