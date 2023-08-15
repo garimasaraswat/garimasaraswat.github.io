@@ -1,10 +1,5 @@
-## Results {.tabset}
-
-### Tab One
-
-### Tab Two
-
-## {-}
+| [Instrumentation](/instru.md)      | [Modelling](model.md) |
+| ---------------------------------- | --------------------- |
 
 With the above unnumbered (`{-}`) and empty section header,
 we can end the tabset and continue to write more paragraphs.**
