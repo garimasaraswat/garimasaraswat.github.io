@@ -1,4 +1,4 @@
-| [Instrumentation](/instru.md)      | [Modelling](model.md) | <mark style="background-color: #FFFF00">Highlighted text</mark>  
+| [Instrumentation](/instru.md)      | [Modelling](model.md) | ==Highlighted text==
 | ---------------------------------- | --------------------- |
 
 With the above unnumbered (`{-}`) and empty section header,
