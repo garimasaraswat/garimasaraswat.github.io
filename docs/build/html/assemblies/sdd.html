@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>System design description &#8212; EMERALD 3.8 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Digital War-room" href="warroom.html" />
+    <link rel="prev" title="Requirement tracebility diagram" href="rtm.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="system-design-description">
+<h1>System design description<a class="headerlink" href="#system-design-description" title="Permalink to this headline">¶</a></h1>
+<section id="vacuum">
+<h2>Vacuum<a class="headerlink" href="#vacuum" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the vacuum design for Emerald.</p>
+<details class="summary-design-criteria">
+<summary>Design criteria</summary><p>Since the machine is supposed to operate at cryogenic temperature, a bakeout is not required. But it will be “good to have” feature if the machine is also operable at room temperature. Thus, we strive to design an <i class="abbreviation"><abbr title="Ultra-high vacuum">UHV</i></abbr> bakeable chamber which will achieve <i class="abbreviation"><abbr title="Extremely-high vacuum">XHV</i></abbr> once it is cooled down.
+Of course for MAGIC, all components must be non-magnetic and magnetic shielding must be incorporated.</p>
+</details><details class="summary-outer-chamber">
+<summary>Outer chamber</summary><p>The outer chamber is constructed in several parts for easier assembly.</p>
+<ul class="simple">
+<li><p>Re-entrant window: Custom built fused-silica window to reduce the distance of dection objective lens to the ion trap center.</p></li>
+<li><p>Bottom plate: This will be mounted on the optical table and should not deform under the weight of all components attached above it. The reentrant window for detection will be attached from below to this plate.</p></li>
+<li><p>Bottom chamber: This part will have eight windows to allow laser entry-exit.</p></li>
+<li><p>Top chamber: This part will have eight ports for attaching vacuum pumps, gauge, SMA connections, Sub-D connections and provision for future optical fiber connections.</p></li>
+<li><p>Top plate: The cryocooler will be inserted through this flange. It will have provision for mounting to external crane/pulley system on top.</p></li>
+</ul>
+</details><details class="summary-vacuum-pumps-and-gauge">
+<summary>Vacuum pumps and gauge</summary><p>The initial pump-down will be carried out via Turbo molecular pump (TMP). After reaching ~$10^-8$ mbar, the TMP will be disconnected from the chamber by closing the angle valve and NextTorr NEG+Ion pump will be switched on.
+The strength of Ion+NEG pump was decided based on the volume of the vacuum chamber and desired final vacuum.</p>
+</details><section id="mw">
+<h3>MW<a class="headerlink" href="#mw" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rf">
+<h3>RF<a class="headerlink" href="#rf" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="detection">
+<h3>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">EMERALD</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gantt.html">Gantt chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbs.html">Product breakdown structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtm.html">Requirement tracebility diagram</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">System design description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="warroom.html">Digital War-room</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rtm.html" title="previous chapter">Requirement tracebility diagram</a></li>
+      <li>Next: <a href="warroom.html" title="next chapter">Digital War-room</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, GSA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/assemblies/sdd.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

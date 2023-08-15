@@ -1,0 +1,16 @@
+Product breakdown structure
+===================================
+   
+.. mermaid::
+   
+    mindmap
+      root((EMERALD))
+        Vacuum
+        RF
+        MW
+        Cryo
+        Trap
+        Laser delivey
+        Detection
+        Software
+       

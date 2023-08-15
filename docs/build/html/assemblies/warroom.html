@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Digital War-room &#8212; EMERALD 3.8 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="System design description" href="sdd.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="digital-war-room">
+<h1>Digital War-room<a class="headerlink" href="#digital-war-room" title="Permalink to this headline">¶</a></h1>
+<p><strong>Emerald</strong> is a macroscopic, cryogenic <em>MAGIC</em> ion trap, fully developed at <em>eleQtron GmbH</em> &lt;<a class="reference external" href="https://eleqtron.com/en/">https://eleqtron.com/en/</a>&gt;`_</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development.</p>
+</div>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 1800px;
+                 height: 1200px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="Outer chamber">Outer chamber</option>
+                                
+                                    <option value="Inner shields">Inner shields</option>
+                                
+                                    <option value="Neg+ion pump controller">Neg+ion pump controller</option>
+                                
+                                    <option value="Neg+ion pump">Neg+ion pump</option>
+                                
+                                    <option value="Pressure gauge">Pressure gauge</option>
+                                
+                                    <option value="Charcoal pump">Charcoal pump</option>
+                                
+                                    <option value="Angle valves">Angle valves</option>
+                                
+                                    <option value="Cryocooler">Cryocooler</option>
+                                
+                                    <option value="He compressor">He compressor</option>
+                                
+                                    <option value="He gas bottle">He gas bottle</option>
+                                
+                                    <option value="Water chiller">Water chiller</option>
+                                
+                                    <option value="Objective lens">Objective lens</option>
+                                
+                                    <option value="PMT">PMT</option>
+                                
+                                    <option value="Camera">Camera</option>
+                                
+                                    <option value="Ablation laser">Ablation laser</option>
+                                
+                                    <option value="Optical cage">Optical cage</option>
+                                
+                                    <option value="Computer">Computer</option>
+                                
+                                    <option value="Sinara">Sinara</option>
+                                
+                                    <option value="Sinara (Urukul)">Sinara (Urukul)</option>
+                                
+                                    <option value="Sinara (DIO)">Sinara (DIO)</option>
+                                
+                                    <option value="Sinara (DC Zotino)">Sinara (DC Zotino)</option>
+                                
+                                    <option value="Sinara (Camera grabber)">Sinara (Camera grabber)</option>
+                                
+                                    <option value="MW amplifier">MW amplifier</option>
+                                
+                                    <option value="MW mixer">MW mixer</option>
+                                
+                                    <option value="AWG">AWG</option>
+                                
+                                    <option value="Stable signal generator (PLL)">Stable signal generator (PLL)</option>
+                                
+                                    <option value="GPS clock">GPS clock</option>
+                                
+                                    <option value="RF trap drive">RF trap drive</option>
+                                
+                                    <option value="RF resonator">RF resonator</option>
+                                
+                                    <option value="RF impedance matching ">RF impedance matching </option>
+                                
+                                    <option value="RF electrodes">RF electrodes</option>
+                                
+                                    <option value="Endcaps">Endcaps</option>
+                                
+                                    <option value="Compensation electrodes">Compensation electrodes</option>
+                                
+                                    <option value="MW antenna">MW antenna</option>
+                                
+                                    <option value="Magnets">Magnets</option>
+                                
+                                    <option value="Trap holder">Trap holder</option>
+                                
+                                    <option value="Ablation target holder">Ablation target holder</option>
+                                
+                                    <option value="369 nm">369 nm</option>
+                                
+                                    <option value="399 nm">399 nm</option>
+                                
+                                    <option value="760 nm">760 nm</option>
+                                
+                                    <option value="935 nm">935 nm</option>
+                                
+                                    <option value="EOM">EOM</option>
+                                
+                                    <option value="AOM">AOM</option>
+                                
+                                    <option value="MEMS">MEMS</option>
+                                
+                                    <option value="Beam shaping">Beam shaping</option>
+                                
+                                    <option value="Beam overlapping">Beam overlapping</option>
+                                
+                                    <option value="Optical table">Optical table</option>
+                                
+                                    <option value="Cryocooler mount">Cryocooler mount</option>
+                                
+                                    <option value="19 inch rack">19 inch rack</option>
+                                
+                                    <option value="Utility room">Utility room</option>
+                                
+                                    <option value="UPS">UPS</option>
+                                
+                                    <option value="Vacuum">Vacuum</option>
+                                
+                                    <option value="Cryo">Cryo</option>
+                                
+                                    <option value="Detection">Detection</option>
+                                
+                                    <option value="Ablation">Ablation</option>
+                                
+                                    <option value="Control">Control</option>
+                                
+                                    <option value="MW">MW</option>
+                                
+                                    <option value="RF">RF</option>
+                                
+                                    <option value="Trap">Trap</option>
+                                
+                                    <option value="Laser delivery">Laser delivery</option>
+                                
+                                    <option value="Lab infrastructure">Lab infrastructure</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": "Vacuum", "id": "Outer chamber", "label": "Outer chamber", "shape": "dot", "title": "Outer chamber"}, {"group": "Vacuum", "id": "Inner shields", "label": "Inner shields", "shape": "dot", "title": "Inner shields"}, {"group": "Vacuum", "id": "Neg+ion pump controller", "label": "Neg+ion pump controller", "shape": "dot", "title": "Neg+ion pump controller"}, {"group": "Vacuum", "id": "Neg+ion pump", "label": "Neg+ion pump", "shape": "dot", "title": "Neg+ion pump"}, {"group": "Vacuum", "id": "Pressure gauge", "label": "Pressure gauge", "shape": "dot", "title": "Pressure gauge"}, {"group": "Vacuum", "id": "Charcoal pump", "label": "Charcoal pump", "shape": "dot", "title": "Charcoal pump"}, {"group": "Vacuum", "id": "Angle valves", "label": "Angle valves", "shape": "dot", "title": "Angle valves"}, {"group": "Cryo", "id": "Cryocooler", "label": "Cryocooler", "shape": "dot", "title": "Cryocooler"}, {"group": "Cryo", "id": "He compressor", "label": "He compressor", "shape": "dot", "title": "He compressor"}, {"group": "Cryo", "id": "He gas bottle", "label": "He gas bottle", "shape": "dot", "title": "He gas bottle"}, {"group": "Cryo", "id": "Water chiller", "label": "Water chiller", "shape": "dot", "title": "Water chiller"}, {"group": "Detection", "id": "Objective lens", "label": "Objective lens", "shape": "dot", "title": "Objective lens"}, {"group": "Detection", "id": "PMT", "label": "PMT", "shape": "dot", "title": "PMT"}, {"group": "Detection", "id": "Camera", "label": "Camera", "shape": "dot", "title": "Camera"}, {"group": "Ablation", "id": "Ablation laser", "label": "Ablation laser", "shape": "dot", "title": "Ablation laser"}, {"group": "Ablation", "id": "Optical cage", "label": "Optical cage", "shape": "dot", "title": "Optical cage"}, {"group": "Control", "id": "Computer", "label": "Computer", "shape": "dot", "title": "Computer"}, {"group": "Control", "id": "Sinara", "label": "Sinara", "shape": "dot", "title": "Sinara"}, {"group": "Control", "id": "Sinara (Urukul)", "label": "Sinara (Urukul)", "shape": "dot", "title": "Sinara (Urukul)"}, {"group": "Control", "id": "Sinara (DIO)", "label": "Sinara (DIO)", "shape": "dot", "title": "Sinara (DIO)"}, {"group": "Control", "id": "Sinara (DC Zotino)", "label": "Sinara (DC Zotino)", "shape": "dot", "title": "Sinara (DC Zotino)"}, {"group": "Control", "id": "Sinara (Camera grabber)", "label": "Sinara (Camera grabber)", "shape": "dot", "title": "Sinara (Camera grabber)"}, {"group": "MW", "id": "MW amplifier", "label": "MW amplifier", "shape": "dot", "title": "MW amplifier"}, {"group": "MW", "id": "MW mixer", "label": "MW mixer", "shape": "dot", "title": "MW mixer"}, {"group": "MW", "id": "AWG", "label": "AWG", "shape": "dot", "title": "AWG"}, {"group": "MW", "id": "Stable signal generator (PLL)", "label": "Stable signal generator (PLL)", "shape": "dot", "title": "Stable signal generator (PLL)"}, {"group": "MW", "id": "GPS clock", "label": "GPS clock", "shape": "dot", "title": "GPS clock"}, {"group": "RF", "id": "RF trap drive", "label": "RF trap drive", "shape": "dot", "title": "RF trap drive"}, {"group": "RF", "id": "RF resonator", "label": "RF resonator", "shape": "dot", "title": "RF resonator"}, {"group": "RF", "id": "RF impedance matching ", "label": "RF impedance matching ", "shape": "dot", "title": "RF impedance matching "}, {"group": "Trap", "id": "RF electrodes", "label": "RF electrodes", "shape": "dot", "title": "RF electrodes"}, {"group": "Trap", "id": "Endcaps", "label": "Endcaps", "shape": "dot", "title": "Endcaps"}, {"group": "Trap", "id": "Compensation electrodes", "label": "Compensation electrodes", "shape": "dot", "title": "Compensation electrodes"}, {"group": "Trap", "id": "MW antenna", "label": "MW antenna", "shape": "dot", "title": "MW antenna"}, {"group": "Trap", "id": "Magnets", "label": "Magnets", "shape": "dot", "title": "Magnets"}, {"group": "Trap", "id": "Trap holder", "label": "Trap holder", "shape": "dot", "title": "Trap holder"}, {"group": "Trap", "id": "Ablation target holder", "label": "Ablation target holder", "shape": "dot", "title": "Ablation target holder"}, {"group": "Laser delivery", "id": "369 nm", "label": "369 nm", "shape": "dot", "title": "369 nm"}, {"group": "Laser delivery", "id": "399 nm", "label": "399 nm", "shape": "dot", "title": "399 nm"}, {"group": "Laser delivery", "id": "760 nm", "label": "760 nm", "shape": "dot", "title": "760 nm"}, {"group": "Laser delivery", "id": "935 nm", "label": "935 nm", "shape": "dot", "title": "935 nm"}, {"group": "Laser delivery", "id": "EOM", "label": "EOM", "shape": "dot", "title": "EOM"}, {"group": "Laser delivery", "id": "AOM", "label": "AOM", "shape": "dot", "title": "AOM"}, {"group": "Laser delivery", "id": "MEMS", "label": "MEMS", "shape": "dot", "title": "MEMS"}, {"group": "Laser delivery", "id": "Beam shaping", "label": "Beam shaping", "shape": "dot", "title": "Beam shaping"}, {"group": "Laser delivery", "id": "Beam overlapping", "label": "Beam overlapping", "shape": "dot", "title": "Beam overlapping"}, {"group": "Lab infrastructure", "id": "Optical table", "label": "Optical table", "shape": "dot", "title": "Optical table"}, {"group": "Lab infrastructure", "id": "Cryocooler mount", "label": "Cryocooler mount", "shape": "dot", "title": "Cryocooler mount"}, {"group": "Lab infrastructure", "id": "19 inch rack", "label": "19 inch rack", "shape": "dot", "title": "19 inch rack"}, {"group": "Lab infrastructure", "id": "Utility room", "label": "Utility room", "shape": "dot", "title": "Utility room"}, {"group": "Lab infrastructure", "id": "UPS", "label": "UPS", "shape": "dot", "title": "UPS"}, {"group": "Vacuum", "id": "Vacuum", "label": "Vacuum", "shape": "dot", "title": "Vacuum", "x": -800, "y": -500}, {"group": "Cryo", "id": "Cryo", "label": "Cryo", "shape": "dot", "title": "Cryo", "x": -800, "y": -400}, {"group": "Detection", "id": "Detection", "label": "Detection", "shape": "dot", "title": "Detection", "x": -800, "y": -300}, {"group": "Ablation", "id": "Ablation", "label": "Ablation", "shape": "dot", "title": "Ablation", "x": -800, "y": -200}, {"group": "Control", "id": "Control", "label": "Control", "shape": "dot", "title": "Control", "x": -800, "y": -100}, {"group": "MW", "id": "MW", "label": "MW", "shape": "dot", "title": "MW", "x": -800, "y": 0}, {"group": "RF", "id": "RF", "label": "RF", "shape": "dot", "title": "RF", "x": -800, "y": 100}, {"group": "Trap", "id": "Trap", "label": "Trap", "shape": "dot", "title": "Trap", "x": -800, "y": 200}, {"group": "Laser delivery", "id": "Laser delivery", "label": "Laser delivery", "shape": "dot", "title": "Laser delivery", "x": -800, "y": 300}, {"group": "Lab infrastructure", "id": "Lab infrastructure", "label": "Lab infrastructure", "shape": "dot", "title": "Lab infrastructure", "x": -800, "y": 400}]);
+                  edges = new vis.DataSet([{"from": "Outer chamber", "to": "Cryocooler"}, {"from": "Outer chamber", "to": "Neg+ion pump"}, {"from": "Outer chamber", "to": "Pressure gauge"}, {"from": "Outer chamber", "to": "Optical table"}, {"from": "Inner shields", "to": "Cryocooler"}, {"from": "Inner shields", "to": "Trap holder"}, {"from": "Inner shields", "to": "Charcoal pump"}, {"from": "Neg+ion pump controller", "to": "Neg+ion pump"}, {"from": "Neg+ion pump controller", "to": "Computer"}, {"from": "Neg+ion pump controller", "to": "UPS"}, {"from": "Neg+ion pump controller", "to": "19 inch rack"}, {"from": "Pressure gauge", "to": "Computer"}, {"from": "Pressure gauge", "to": "UPS"}, {"from": "Angle valves", "to": "Outer chamber"}, {"from": "Cryocooler", "to": "Charcoal pump"}, {"from": "Cryocooler", "to": "Trap holder"}, {"from": "Cryocooler", "to": "He gas bottle"}, {"from": "Cryocooler", "to": "Cryocooler mount"}, {"from": "He compressor", "to": "Cryocooler"}, {"from": "He compressor", "to": "Water chiller"}, {"from": "He compressor", "to": "UPS"}, {"from": "He compressor", "to": "Utility room"}, {"from": "He gas bottle", "to": "Utility room"}, {"from": "Water chiller", "to": "UPS"}, {"from": "Water chiller", "to": "Utility room"}, {"from": "Objective lens", "to": "Outer chamber"}, {"from": "PMT", "to": "Objective lens"}, {"from": "Camera", "to": "Objective lens"}, {"from": "Camera", "to": "Sinara (Camera grabber)"}, {"from": "Ablation laser", "to": "Optical cage"}, {"from": "Ablation laser", "to": "UPS"}, {"from": "Ablation laser", "to": "Sinara (DIO)"}, {"from": "Ablation laser", "to": "Trap holder"}, {"from": "Ablation laser", "to": "Optical table"}, {"from": "Optical cage", "to": "Optical table"}, {"from": "Computer", "to": "Sinara"}, {"from": "Sinara", "to": "Sinara (Urukul)"}, {"from": "Sinara", "to": "Sinara (DIO)"}, {"from": "Sinara", "to": "Sinara (DC Zotino)"}, {"from": "Sinara", "to": "Sinara (Camera grabber)"}, {"from": "Sinara", "to": "UPS"}, {"from": "Sinara (Urukul)", "to": "RF trap drive"}, {"from": "Sinara (DIO)", "to": "Camera"}, {"from": "Sinara (DIO)", "to": "AWG"}, {"from": "Sinara (DIO)", "to": "EOM"}, {"from": "Sinara (DC Zotino)", "to": "Compensation electrodes"}, {"from": "Sinara (DC Zotino)", "to": "Endcaps"}, {"from": "MW amplifier", "to": "MW mixer"}, {"from": "MW amplifier", "to": "MW antenna"}, {"from": "MW amplifier", "to": "UPS"}, {"from": "MW mixer", "to": "Stable signal generator (PLL)"}, {"from": "MW mixer", "to": "AWG"}, {"from": "AWG", "to": "GPS clock"}, {"from": "AWG", "to": "UPS"}, {"from": "Stable signal generator (PLL)", "to": "GPS clock"}, {"from": "Stable signal generator (PLL)", "to": "UPS"}, {"from": "GPS clock", "to": "UPS"}, {"from": "RF trap drive", "to": "RF impedance matching "}, {"from": "RF trap drive", "to": "UPS"}, {"from": "RF resonator", "to": "RF impedance matching "}, {"from": "RF resonator", "to": "RF electrodes"}, {"from": "RF electrodes", "to": "Trap holder"}, {"from": "Endcaps", "to": "Trap holder"}, {"from": "Compensation electrodes", "to": "Trap holder"}, {"from": "MW antenna", "to": "Trap holder"}, {"from": "Magnets", "to": "Trap holder"}, {"from": "Ablation target holder", "to": "Ablation laser"}, {"from": "Ablation target holder", "to": "Optical cage"}, {"from": "Ablation target holder", "to": "Sinara (DIO)"}, {"from": "Ablation target holder", "to": "Trap holder"}, {"from": "369 nm", "to": "Beam overlapping"}, {"from": "369 nm", "to": "Beam shaping"}, {"from": "399 nm", "to": "Beam overlapping"}, {"from": "399 nm", "to": "Beam shaping"}, {"from": "760 nm", "to": "Beam overlapping"}, {"from": "760 nm", "to": "Beam shaping"}, {"from": "935 nm", "to": "Beam overlapping"}, {"from": "935 nm", "to": "Beam shaping"}, {"from": "EOM", "to": "369 nm"}, {"from": "EOM", "to": "760 nm"}, {"from": "EOM", "to": "935 nm"}, {"from": "AOM", "to": "369 nm"}, {"from": "AOM", "to": "Sinara (Urukul)"}, {"from": "MEMS", "to": "399 nm"}, {"from": "MEMS", "to": "760 nm"}, {"from": "MEMS", "to": "935 nm"}, {"from": "Optical table", "to": "Beam shaping"}, {"from": "Optical table", "to": "Beam overlapping"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": false,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html></section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">EMERALD</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gantt.html">Gantt chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbs.html">Product breakdown structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rtm.html">Requirement tracebility diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdd.html">System design description</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Digital War-room</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="sdd.html" title="previous chapter">System design description</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, GSA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/assemblies/warroom.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,16 @@
+System design description
+===================================
+
+**Emerald** is a macroscopic, cryogenic *MAGIC* ion trap, fully developed at *eleQtron GmbH* <https://eleqtron.com/en/>`_
+
+.. note::
+
+   This project is under active development.
+
+.. graphviz::
+
+     digraph example {
+         a [label="sphinx", href="https://www.sphinx-doc.org/", target="_top"];
+         b [label="other"];
+         a -> b;
+     }
