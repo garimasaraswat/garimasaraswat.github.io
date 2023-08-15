@@ -21,28 +21,5 @@ This is a paragraph
 ![text](triangle.png)
 >
 ```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "id": 1,
-      "properties": {
-        "ID": 0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-              [-90,35],
-              [-90,30],
-              [-85,30],
-              [-85,35],
-              [-90,35]
-          ]
-        ]
-      }
-    }
-  ]
-}
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"coordinates":[[81.63362556795829,21.239720072994828],[73.85436806581248,18.5250984948499],[72.87696959937185,19.07973757076536],[-84.28002821981724,30.444228162576636],[10.135725934550635,54.32529247930481],[8.020048693074187,50.87575310753286]],"type":"LineString"}}]}
 ```
