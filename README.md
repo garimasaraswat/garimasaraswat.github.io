@@ -34,3 +34,12 @@ You can add an image or a code block, too.
 ```
 
 </details>
+ere is a simple flow chart:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
