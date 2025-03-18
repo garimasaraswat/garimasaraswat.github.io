@@ -52,7 +52,7 @@
 
         nav a:hover {
             color: #fff;
-            background-color: #333;
+            background-color: #555;  /* Lighter background on hover */
             border-radius: 3px;
         }
 
@@ -75,7 +75,8 @@
             color: #777;
             margin-top: 40px;
         }
-        * Style for links within the tab content */
+
+        /* Style for links within the tab content */
         .tab-links {
             display: block; /* Make the container a block-level element */
             margin-top: 20px;
@@ -98,6 +99,18 @@
             padding: 8px 10px;
             border-radius: 3px;
         }
+
+        /* Add styles for the active tab */
+        nav a.active {
+            color: #fff;
+            background-color: #333;  /* Dark background for active tab */
+            border-radius: 3px;
+        }
+
+        /* Add background to the content when active */
+        .tab-content.active {
+            background-color: #fff;  /* Keep the content background white */
+        }
     </style>
 </head>
 <body>
@@ -114,12 +127,12 @@
     <a href="javascript:void(0);" onclick="showTab('tab3')">Readings</a>
     <a href="javascript:void(0);" onclick="showTab('tab4')">Wanderings</a>
 </nav>
-    
+
 <div id="aboutMe" class="tab-content active">
     <h2>About Me</h2>
-    <p>Hi I'm Garima! Physicist by training, product developer by profession and artist mom by self-proclaimation &#x1F60A;</p>
+    <p>Hi I'm Garima! Physicist by training, product developer by profession and artist mom by self-proclamation &#x1F60A;</p>
 </div>
-    
+
 <div id="tab1" class="tab-content">
     <h2>Tech</h2>
     <p>This is where I share my work and interests in technology and development.</p>
@@ -144,25 +157,36 @@
     <h2>Readings</h2>
     <p>Explore my writing projects, blogs, and articles on various topics.</p>
 </div>
+
 <div id="tab4" class="tab-content">
     <h2>Wanderings</h2>
     <p>"Not All Who Wander Are Lost"</p>
 </div>
+
 <footer>
     <p>Contact me at: garima.saraswat@gmail.com</p>
 </footer>
 
 <script>
     function showTab(tabId) {
-        // Hide all tabs
+        // Remove the 'active' class from all tabs and links
         const tabs = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => {
             tab.classList.remove('active');
         });
+        
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
 
-        // Show the selected tab
+        // Show the selected tab content
         const selectedTab = document.getElementById(tabId);
         selectedTab.classList.add('active');
+        
+        // Highlight the selected tab
+        const selectedLink = document.querySelector(`nav a[href='javascript:void(0);'][onclick="showTab('${tabId}')"]`);
+        selectedLink.classList.add('active');
     }
 </script>
 
