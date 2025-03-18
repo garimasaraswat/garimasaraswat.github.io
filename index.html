@@ -1,7 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garima Saraswat's Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External stylesheet for custom styling -->
+    <script src="script.js"></script> <!-- External JavaScript for tab functionality -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav a:hover {
+            background-color: #111;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<header>
+    <h1>Welcome to Garima Saraswat's Portfolio</h1>
+    <p>Explore my areas of interest below</p>
+</header>
+
+<nav>
+    <a href="javascript:void(0);" onclick="showTab('tab1')">Area 1</a>
+    <a href="javascript:void(0);" onclick="showTab('tab2')">Area 2</a>
+    <a href="javascript:void(0);" onclick="showTab('tab3')">Area 3</a>
+</nav>
+
+<div id="tab1" class="tab-content active">
+    <h2>Area 1: Technology</h2>
+    <p>This section contains all my work and interests related to technology.</p>
+</div>
+
+<div id="tab2" class="tab-content">
+    <h2>Area 2: Design</h2>
+    <p>This section showcases my design projects, including UI/UX and graphic design.</p>
+</div>
+
+<div id="tab3" class="tab-content">
+    <h2>Area 3: Writing</h2>
+    <p>Explore my writing projects, blogs, and articles on various topics.</p>
+</div>
+
+<footer>
+    <p>Contact me at: garimasaraswat@example.com</p>
+</footer>
+
+<script>
+    function showTab(tabId) {
+        // Hide all tabs
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Show the selected tab
+        const selectedTab = document.getElementById(tabId);
+        selectedTab.classList.add('active');
+    }
+</script>
+
 </body>
 </html>
