@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Captions</title>
+    <style>
+        /* Container to hold the images */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between images */
+            justify-content: center;
+        }
+
+        /* Style for each image figure */
+        .image-gallery figure {
+            width: 200px;      /* Fixed width for all images */
+            text-align: center; /* Center the caption under the image */
+            margin: 0;          /* Remove default margin */
+        }
+
+        /* Style for each image */
+        .image-gallery img {
+            width: 200px;      /* Fixed width for all images */
+            height: 200px;     /* Fixed height for all images */
+            object-fit: cover; /* Makes sure the image covers the box without distortion */
+            border-radius: 8px; /* Optional: Rounded corners for a soft look */
+        }
+
+        /* Style for captions */
+        .image-gallery figcaption {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Image Gallery</h1>
+
+<div class="image-gallery">
+    <figure>
+        <img src="img/image1.jpg" alt="Image 1">
+        <figcaption>Caption for Image 1</figcaption>
+    </figure>
+    <figure>
+        <img src="img/image2.jpg" alt="Image 2">
+        <figcaption>Caption for Image 2</figcaption>
+    </figure>
+    <figure>
+        <img src="img/image3.jpg" alt="Image 3">
+        <figcaption>Caption for Image 3</figcaption>
+    </figure>
+    <figure>
+        <img src="img/image4.jpg" alt="Image 4">
+        <figcaption>Caption for Image 4</figcaption>
+    </figure>
+    <figure>
+        <img src="img/image5.jpg" alt="Image 5">
+        <figcaption>Caption for Image 5</figcaption>
+    </figure>
+</div>
+
+</body>
+</html>
