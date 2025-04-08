@@ -80,14 +80,17 @@ li {
         }
 
         .tab-content {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            background-color: #e1e7f1; /* Same soft pastel light blue as active tab */
-            border-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-            margin-top: -5px; /* Remove the gap between the tab and content */
-        }
+            {
+    max-width: 800px; /* Set a max width to limit the background */
+    margin: 0 auto; /* Center the tab content horizontally */
+    padding: 20px;
+    background-color: #e1e7f1; /* Light blue background */
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+             margin-top: -5px; /* Remove the gap between the tab and content */
+}
+           
 
         .tab-content.active {
             display: block;
